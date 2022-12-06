@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.HelloWorld.DbTest.dao.User2Dao">
+
+    <select id="getUser2ByName" parameterType="String" resultType="com.example.demo.HelloWorld.DbTest.entity.User2">
+        SELECT * FROM user2 WHERE name = #{name}
+    </select>
+
+    <select id="getUser2ByName1" parameterType="String" resultType="com.example.demo.HelloWorld.DbTest.entity.User2">
+        SELECT * FROM user2 WHERE 1 = 1
+        <if test="name != null">
+            AND name like concat('%',#{name,jdbcType=VARCHAR},'%')
+        </if>
+    </select>
+    
+
+</mapper>
