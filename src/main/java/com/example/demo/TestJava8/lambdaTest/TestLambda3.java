@@ -1,4 +1,4 @@
-package com.example.demo.HelloWorld.TestJava8.lambdaTest;
+package com.example.demo.TestJava8.lambdaTest;
 
 import java.util.ArrayList;
 import java.util.List;

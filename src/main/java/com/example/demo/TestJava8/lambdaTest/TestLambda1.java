@@ -1,4 +1,4 @@
-package com.example.demo.HelloWorld.TestJava8.lambdaTest;
+package com.example.demo.TestJava8.lambdaTest;
 
 /**
  * lambda方法引用

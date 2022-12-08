@@ -1,4 +1,4 @@
-package com.example.demo.HelloWorld.TestJava8;
+package com.example.demo.TestJava8;
 
 /**
  * @author maxiao

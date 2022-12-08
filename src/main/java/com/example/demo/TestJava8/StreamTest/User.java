@@ -1,4 +1,4 @@
-package com.example.demo.HelloWorld.TestJava8.StreamTest;
+package com.example.demo.TestJava8.StreamTest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

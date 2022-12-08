@@ -1,4 +1,4 @@
-package com.example.demo.HelloWorld.TestJava8.StreamTest;
+package com.example.demo.TestJava8.StreamTest;
 
 import java.util.*;
 import java.util.function.Function;
@@ -146,15 +146,15 @@ public class StreamTest {
 
     public static void main(String[] args) {
 
-//        testCreatStream();
-//
-//        testStream();
-//
-//        testStreamMap();
-//
-//        testStreamSort();
-//
-//        testStreamReduce();
+        testCreatStream();
+
+        testStream();
+
+        testStreamMap();
+
+        testStreamSort();
+
+        testStreamReduce();
 
         testStreamCollect();
     }
