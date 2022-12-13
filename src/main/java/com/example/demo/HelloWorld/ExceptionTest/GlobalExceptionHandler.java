@@ -18,7 +18,7 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(value = Exception.class)
-    public ResponseEntity<ErrorResponse> exceptionHandle(Exception e) {
+    public ResponseEntity<ErrorResponse> exceptionHandle(Exception e) throws Exception {
 
         if (e instanceof IllegalArgumentException) {
             return ResponseEntity.status(400).body(illegalArgumentResponse);
@@ -26,8 +26,8 @@ public class GlobalExceptionHandler {
             return ResponseEntity.status(400).body(resourceNotFoundResponse);
         } else if (e instanceof NullPointerException) {
             return ResponseEntity.status(400).body(npeResponse);
+        } else {
+            throw e;
         }
-
-        return null;
     }
 }

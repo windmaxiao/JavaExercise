@@ -13,7 +13,6 @@ public class ChineseProxy implements MethodInterceptor {
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("-------- CGLIB ---------");
-        Object intercept = methodProxy.invokeSuper(o, objects);
-        return intercept;
+        return methodProxy.invokeSuper(o, objects);
     }
 }
