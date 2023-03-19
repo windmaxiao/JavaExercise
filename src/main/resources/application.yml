@@ -20,8 +20,8 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 scheduler:
-  # 定时任务的时间，每5秒执行一次
-  testCron: 0/5 * * * * ?
+  # 定时任务的时间，每天12点
+  testCron: 0 0 12 * * ?
 
 logging:
   file:
