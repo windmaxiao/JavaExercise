@@ -1,4 +1,4 @@
-package com.example.demo.scheduler;
+package com.example.demo.scheduler.schedulers;
 
 
 import lombok.extern.slf4j.Slf4j;

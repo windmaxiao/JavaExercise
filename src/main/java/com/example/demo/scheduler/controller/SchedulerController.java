@@ -1,6 +1,7 @@
-package com.example.demo.scheduler;
+package com.example.demo.scheduler.controller;
 
 
+import com.example.demo.scheduler.schedulers.TestSchedulerConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
