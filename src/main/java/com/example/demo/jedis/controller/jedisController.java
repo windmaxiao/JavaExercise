@@ -1,7 +1,6 @@
-package com.example.demo.redis.controller;
+package com.example.demo.jedis.controller;
 
 import com.example.demo.jedis.service.RedisService;
-import com.example.demo.redis.service.StringRedisService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +13,24 @@ import javax.annotation.Resource;
  * @author maxiao
  */
 @RestController
-@RequestMapping("/redis")
-public class RedisController {
+@RequestMapping("/jedis")
+public class jedisController {
 
     @Resource
-    StringRedisService stringRedisService;
+    RedisService redisService;
 
     @GetMapping("/getData")
     public ResponseEntity getData(@RequestParam("key") String key) {
-        return ResponseEntity.ok(stringRedisService.getStringValue(key));
+        return ResponseEntity.ok(redisService.get(key, String.class));
     }
 
     @GetMapping("/setData")
     public void setData(@RequestParam("key") String key, @RequestParam("value") String value) {
-        stringRedisService.setStringValue(key, value);
+        redisService.set(key, value);
     }
 
+    @GetMapping("/getAllKeys")
+    public ResponseEntity getAllKeys() {
+        return ResponseEntity.ok(redisService.getAllKeys());
+    }
 }

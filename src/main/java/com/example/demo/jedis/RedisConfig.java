@@ -1,4 +1,4 @@
-package com.example.demo.redis;
+package com.example.demo.jedis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

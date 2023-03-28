@@ -10,11 +10,12 @@ spring:
     #type: com.zaxxer.hikari.HikariDataSource
   jpa:
     show-sql: true #是否显示数据库语句
+
   redis:
-    database: 0
-    host: 127.0.0.1
+    host: 192.168.81.128
     password: '123456'
     port: 6379
+    database: 0
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

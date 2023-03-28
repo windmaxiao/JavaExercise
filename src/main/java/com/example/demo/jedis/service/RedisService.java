@@ -1,10 +1,12 @@
-package com.example.demo.redis.service;
+package com.example.demo.jedis.service;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
+
+import java.util.Set;
 
 /**
  * @author maxiao
@@ -68,4 +70,16 @@ public class RedisService {
             return JSON.toJavaObject(JSON.parseObject(str), clazz);
         }
     }
+
+
+    public Set<String> getAllKeys() {
+        Jedis jedis = null;
+        try {
+            jedis = jedisPool.getResource();
+            return jedis.keys("*");
+        } finally {
+            close(jedis);
+        }
+    }
+
 }

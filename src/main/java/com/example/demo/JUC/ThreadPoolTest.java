@@ -129,7 +129,10 @@ public class ThreadPoolTest {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
-        //testThreadPool(8);
+
+        // threadPoolExecutor.shutdown();
+
+        testThreadPool(6);
 
         ThreadPoolTest threadPoolTest = new ThreadPoolTest();
 

@@ -1,4 +1,4 @@
-package com.example.demo.redis;
+package com.example.demo.jedis;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
