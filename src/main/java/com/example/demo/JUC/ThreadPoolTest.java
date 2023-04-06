@@ -127,6 +127,32 @@ public class ThreadPoolTest {
 
     }
 
+
+    public void testThreadPoolExecutor() throws InterruptedException {
+        ThreadPoolExecutor threadPoolExecutor
+                = new ThreadPoolExecutor(3, 5, 10L,
+                TimeUnit.SECONDS, new ArrayBlockingQueue<>(3),
+                Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+
+        CountDownLatch latch = new CountDownLatch(5);
+
+        for (int i = 0; i < 5; i++) {
+            threadPoolExecutor.execute(() -> {
+                System.out.println(System.currentTimeMillis() + "==>>>>>" + Thread.currentThread().getName() + "=====>正在处理");
+                latch.countDown();
+            });
+            System.out.println("1." + threadPoolExecutor.getActiveCount());
+        }
+
+        threadPoolExecutor.shutdown();
+
+        latch.await();
+
+        System.out.println("2." + threadPoolExecutor.getActiveCount());
+
+
+    }
+
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
 
@@ -136,9 +162,12 @@ public class ThreadPoolTest {
 
         ThreadPoolTest threadPoolTest = new ThreadPoolTest();
 
-        System.out.print("单线程执行时间：");
-        Map<String, Object> msgBySingleThread = threadPoolTest.getMsgBySingleThread("1");
-        System.out.print("多线程执行时间：");
-        Map<String, Object> msgByThreadPool = threadPoolTest.getMsgByThreadPool("1");
+//        System.out.print("单线程执行时间：");
+//        Map<String, Object> msgBySingleThread = threadPoolTest.getMsgBySingleThread("1");
+//        System.out.print("多线程执行时间：");
+//        Map<String, Object> msgByThreadPool = threadPoolTest.getMsgByThreadPool("1");
+
+
+        threadPoolTest.testThreadPoolExecutor();
     }
 }

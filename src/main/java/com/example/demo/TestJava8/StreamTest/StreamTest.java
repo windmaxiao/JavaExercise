@@ -1,5 +1,6 @@
 package com.example.demo.TestJava8.StreamTest;
 
+import java.sql.SQLOutput;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -142,6 +143,21 @@ public class StreamTest {
         System.out.println(str1);
     }
 
+    public static void testStreamCollect1() {
+        List<User> users = Arrays.asList(new User("B", 2, true),new User("A", 1, true),
+                new User("D", 4, false), new User("C", 3, false));
+        users.forEach(System.out::println);
+        System.out.println("============================");
+
+        List<User> sortedAge = users.stream().sorted(Comparator.comparingInt(User::getAge)).collect(Collectors.toList());
+        sortedAge.forEach(System.out::println);
+
+        System.out.println("============================");
+
+        List<User> sortedName = users.stream().sorted(Comparator.comparing(User::getName).reversed()).collect(Collectors.toList());
+        sortedName.forEach(System.out::println);
+    }
+
 
 
     public static void main(String[] args) {
@@ -157,5 +173,8 @@ public class StreamTest {
         testStreamReduce();
 
         testStreamCollect();
+
+        testStreamCollect1();
+
     }
 }

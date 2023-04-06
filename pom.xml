@@ -96,6 +96,12 @@
 			<version>2.0.21.graal</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.rabbitmq</groupId>
+			<artifactId>amqp-client</artifactId>
+			<version>5.17.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

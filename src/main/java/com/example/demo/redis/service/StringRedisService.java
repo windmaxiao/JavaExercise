@@ -32,11 +32,13 @@ public class StringRedisService {
 
     /**
      * RENAME 命令
+     * RENAMENX 命令
      * @param key
      * @param newKey
      */
     public void renameKey(String key, String newKey) {
         stringRedisTemplate.rename(key, newKey);
+        stringRedisTemplate.renameIfAbsent(key, newKey);
     }
 
     /**
